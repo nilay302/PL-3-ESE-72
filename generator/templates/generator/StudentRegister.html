@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1 class="page-title">
+        Student Register
+      </h1>
+      <span class="page-desc">
+       Please fill the given details
+      </span>
+    <form action="" method="POST" class="login-form form">
+        {% csrf_token %}
+        <label>{{form.username.label}}:</label>
+      <input type="text" class="input" name="username" placeholder="Username">
+      <label>{{form.email.label}}:</label>
+      <input type="email" class="input" name="email" placeholder="email">
+      <label>{{form.password1.label}}:</label>
+      <input type="password" class="input" name="password1" placeholder="Password">
+      <label>{{form.password2.label}}:</label>
+      <input type="password" class="input" name="password2" placeholder=" Confirm Password">
+      <input type="submit" value="Register" class="send-btn btn">
+    </form>
+</div>
+{% endblock content %}

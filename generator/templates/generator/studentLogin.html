@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1 class="page-title">
+      Student Login
+    </h1>
+    <span class="page-desc">
+      Please Enter to Login
+    </span>
+    <form action="" method="POST" class="login-form form">
+        {% csrf_token %}
+      <input type="text" class="input" name="username" placeholder="Username">
+      <input type="password" class="input" name="password" placeholder="Password">
+      <input type="submit" value="Login" class="send-btn btn">
+    </form>
+    {% for message in messages %}
+       <h5 style="color:red">{{message}}</h5>
+    {% endfor %}
+  </div>
+{% endblock content %}
